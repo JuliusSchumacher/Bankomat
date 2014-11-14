@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+
+            var balance = 0, ans = 0;
+            
+            if(localStorage.getItem("balance") != null) {
+                balance = parseInt(localStorage.getItem("balance"));
+            }
+			
+            
+            while(ans != null){
+                var ans = prompt("");
+                if(ans == 1){
+                    var amount = prompt();
+                    balance = balance + parseInt(amount);
+                    alert("+" + amount);
+                }else if (ans == 2){
+                    var amount = prompt();
+                    balance = balance - parseInt(amount);
+                    alert("-" + amount);
+                }else if(ans == 3){
+                    alert(balance);
+                }else {
+					alert("Congrats. You broke it. Good job.");
+				}
+					
+                
+                localStorage.setItem("balance", balance);
+            }
+
+        </script>
+    </head>
+</html>
